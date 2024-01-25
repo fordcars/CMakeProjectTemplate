@@ -1,2 +1,5 @@
 # CMakeProjectTemplate
-Finally a simple CMake/C++ project template! Amazeballs.
+## Features:
+* CMake
+* C++
+* `getopt.h` for Windows `getopt`
