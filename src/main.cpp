@@ -12,19 +12,23 @@ void printHelp(const std::string& progName) {
 }
 
 int main(int argc, char** argv) {
-    for(;;) {
-        switch(getopt(argc, argv, "h")) {
-        case '?':
-        case 'h':
-        default:
-            printHelp(argv[0]);
-            break;
+    int c;
+    while((c = getopt(argc, argv, "ha:")) != -1) {
+        switch(c) {
+            case '?':
+            case 'a':
+            {
+                std::string val = optarg;
+                break;
+            }
+            case 'h':
+            default:
+                printHelp(argv[0]);
+                return 0;
 
-        case -1:
-            break;
+            case -1:
+                break;
         }
-
-        break;
     }
     
     return 0;
